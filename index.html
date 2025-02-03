@@ -167,7 +167,7 @@
             const messageElement = document.getElementById("message");
 
             if (selectedAnswer) {
-                const answerIndex = ["a", "b", "c"].indexOf(selectedAnswer.value);
+                const answerIndex = ["a", "b", "c", "d", "e"].indexOf(selectedAnswer.value);
                 if (answerIndex === questions[currentQuestionIndex].correctAnswer) {
                     currentQuestionIndex++;
                     messageElement.textContent = "Correct! Moving to next question...";

@@ -58,7 +58,7 @@
         /* Image Styling */
         img {
             width: 300px;
-            height: 200px;
+            height: auto;
             display: block;
             border-radius: 8px;
         }

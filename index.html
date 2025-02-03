@@ -13,8 +13,9 @@
         <nav>
             <ul>
                 <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
                 <li><a href="#work">Work</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#health">Health</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li><a href="#quiz">Quiz</a></li>
                 <li><a href="#gallery">Gallery</a></li>
@@ -94,52 +95,52 @@
         const questions = [
             {
                 question: "What is Adam's current field of study?",
-                options: ["Linguistics", "Natural Language Processing (NLP)", "Psychology"],
-                correctAnswer: 1
+                options: ["Genealogy", "Jesus Christ – our Lord and Saviour", "Linguistics", "Natural Language Processing (NLP)", "Psychology"],
+                correctAnswer: 3
             },
             {
                 question: "What is Adam's preferred way to spend his free time?",
-                options: ["Reading", "Baking", "Speed walking"],
+                options: ["Reading", "Baking", "Speed walking", "Killing it!", "Praying"],
                 correctAnswer: 1
             },
             {
-                question: "What is Adam's current focus in terms of personal health?",
-                options: ["Improving sleep quality", "Managing anxiety and depression", "Overcoming joint pain"],
-                correctAnswer: 1
+                question: "What is Adam's current focus in terms of personal goals?",
+                options: ["Being closer to God", "Improving sleep quality", "Managing anxiety and depression", "Overcoming joint pain", "Sentencing Barabbas"],
+                correctAnswer: 2
             },
             {
                 question: "What is Adam most passionate about in his hobbies?",
-                options: ["Learning new things", "Creating something from scratch", "Exploring nature"],
-                correctAnswer: 1
+                options: ["Creating something from scratch", "Exploring nature","Learning new things", "Tracing back the Holy Bloodline", "Developing his soft skills"],
+                correctAnswer: 0
             },
             {
                 question: "How does Adam feel about his current emotional state?",
-                options: ["Generally positive, hopeful for the future", "Struggling but focusing on improving", "Feeling stuck and overwhelmed"],
+                options: ["Generally positive, hopeful for the future", "Struggling but focusing on improving", "Feeling stuck and overwhelmed", "Just great!", "On the verge of dying"],
                 correctAnswer: 1
             },
             {
                 question: "Which condition is Adam currently being treated for?",
-                options: ["Borderline Personality Disorder", "Hypothyroidism", "Generalized Anxiety Disorder"],
+                options: ["Borderline Personality Disorder", "Hypothyroidism", "Generalized Anxiety Disorder", "Juvenile Idiopathic Arthritis", "Human Immunodeficiency Virus"],
                 correctAnswer: 2
             },
             {
                 question: "What is Adam's job?",
-                options: ["Barista", "Teacher", "Working at TJX"],
-                correctAnswer: 2
+                options: ["Clown", "Barista", "Teacher", "Working at TJX", "Sovereign Pontiff"],
+                correctAnswer: 3
             },
             {
                 question: "What’s Adam's favorite style for a Halloween costume?",
-                options: ["Classic, elegant", "Fun and playful", "Slightly 'slutty' and bold"],
+                options: ["Classic, elegant", "Fun and playful", "Slightly 'slutty' and bold", "Boring", "Scary"],
                 correctAnswer: 2
             },
             {
                 question: "What’s something Adam is currently working on improving?",
-                options: ["Physical fitness", "Mental health", "Language skills"],
-                correctAnswer: 1
+                options: ["Physical fitness", "Language skills", "Opera singing", "Knowledge about the life of Jesus Christ", "Mental health",],
+                correctAnswer: 4
             },
             {
                 question: "How does Adam prefer to cope with stress?",
-                options: ["Exercising or being active", "Talking to friends or family", "Spending time alone to reflect"],
+                options: ["Exercising or being active", "Talking to friends or family", "Spending time alone to reflect", "Praying", "taking psychedelics"],
                 correctAnswer: 2
             }
         ];
@@ -173,7 +174,7 @@
                         messageElement.textContent = 'Congratulations, you know Adam well!';
                     }
                 } else {
-                    messageElement.textContent = "You don't know Adam well enough, now go and just stop being there";
+                    messageElement.textContent = "You don't know Adam well enough!";
                 }
             } else {
                 messageElement.textContent = "Please select an answer.";

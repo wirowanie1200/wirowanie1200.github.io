@@ -1,221 +1,267 @@
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f8ff; /* Light sky blue */
-            color: #2f4f4f; /* Dark slate gray */
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-        header {
-            background-color: #1e3a5f; /* Navy blue */
-            color: white;
-            padding: 2rem;
-            text-align: center;
-        }
-        header h1 {
-            font-size: 2.8rem;
-            margin-bottom: 0.5rem;
-            letter-spacing: 2px;
-            font-weight: 700;
-        }
-        nav ul {
-            list-style: none;
-            padding: 0;
-            font-size: 1.1rem;
-            font-weight: bold;
-        }
-        nav ul li {
-            display: inline;
-            margin: 0 15px;
-        }
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            text-transform: uppercase;
-            transition: 0.3s;
-        }
-        nav ul li a:hover {
-            color: #ffa07a; /* Light salmon */
-            text-decoration: underline;
-        }
-        section {
-            padding: 2rem;
-            margin: 3rem;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-        }
-        section h2 {
-            font-size: 2.4rem;
-            color: #1e3a5f; /* Navy blue */
-            text-align: center;
-            margin-bottom: 1.5rem;
-            font-weight: 600;
-        }
-        
-        /* Image Styling */
-        img {
-            width: 300px;
-            height: auto;
-            display: block;
-            border-radius: 8px;
-        }
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f8ff; /* Light sky blue */
+    color: #2f4f4f; /* Dark slate gray */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
 
-        .project {
-            margin-bottom: 2rem;
-        }
-        .project h3 {
-            font-size: 2rem;
-            color: #2f4f4f; /* Dark slate gray */
-            margin-top: 1rem;
-            font-weight: 600;
-        }
-        .project p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            margin-top: 1rem;
-        }
-        .project img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            margin-top: 1rem;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-        .project ul {
-            list-style-type: disc;
-            padding-left: 20px;
-            font-size: 1.1rem;
-        }
-        .project ul li {
-            margin-bottom: 0.8rem;
-        }
-        footer {
-            text-align: center;
-            padding: 1.5rem;
-            background-color: #1e3a5f;
-            color: white;
-            font-size: 1rem;
-        }
-        footer p {
-            margin: 0;
-        }
+header {
+    background-color: #1e3a5f; /* Navy blue */
+    color: white;
+    padding: 2rem;
+    text-align: center;
+}
 
-        /* Big Red Button */
-        .red-button {
-            position: fixed;
-            bottom: 2rem;
-            left: 50%;
-            transform: translateX(-50%);
-            padding: 1.5rem 2rem;
-            background-color: red;
-            color: white;
-            font-size: 1.5rem;
-            font-weight: bold;
-            text-align: center;
-            border-radius: 50%;
-            text-decoration: none;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-            transition: 0.3s;
-        }
-        .red-button:hover {
-            background-color: darkred;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-        }
+header h1 {
+    font-size: 2.8rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
 
-        /* Quiz Box */
-        .quiz-box {
-            margin-top: 2rem;
-            padding: 2rem;
-            background-color: #ffffff;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        .quiz-box h3 {
-            font-size: 1.8rem;
-            color: #1e3a5f;
-            margin-bottom: 1.5rem;
-            font-weight: 600;
-            text-align: center;
-        }
-        .quiz-box label {
-            display: block;
-            margin: 1rem 0 0.5rem;
-        }
-        .quiz-box input {
-            margin-right: 0.5rem;
-        }
-        .quiz-box button {
-            display: block;
-            width: 100%;
-            padding: 1rem;
-            background-color: #1e3a5f;
-            color: white;
-            font-size: 1.2rem;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-        .quiz-box button:hover {
-            background-color: #ffa07a;
-        }
-        .message {
-            font-size: 1.4rem;
-            color: red;
-            text-align: center;
-            margin-top: 1rem;
-        }
+nav ul {
+    list-style: none;
+    padding: 0;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
 
-        /* Responsive Design */
-        @media screen and (max-width: 1024px) {
-            section {
-                margin: 2rem;
-                padding: 1.5rem;
-            }
-        }
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
 
-        @media screen and (max-width: 768px) {
-            header h1 {
-                font-size: 2.4rem;
-            }
-            section h2 {
-                font-size: 2rem;
-            }
-            nav ul li {
-                margin: 0 8px;
-            }
-            .quiz-box {
-                max-width: 100%;
-                padding: 1.5rem;
-            }
-            .red-button {
-                padding: 1rem 1.5rem;
-                font-size: 1.2rem;
-            }
-        }
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
 
-        @media screen and (max-width: 480px) {
-            header {
-                padding: 1.5rem;
-            }
-            header h1 {
-                font-size: 2rem;
-            }
-            section {
-                margin: 1rem;
-                padding: 1rem;
-            }
-            .quiz-box {
-                padding: 1rem;
-            }
-            .red-button {
-                bottom: 1rem;
-                padding: 0.8rem 1.2rem;
-                font-size: 1rem;
-            }
-        }
+nav ul li a:hover {
+    color: #ffa07a; /* Light salmon */
+    text-decoration: underline;
+}
+
+section {
+    padding: 2rem;
+    margin: 3rem;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+    font-size: 2.4rem;
+    color: #1e3a5f; /* Navy blue */
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+/* Image Styling */
+section img {  /* Images within sections */
+    max-width: 30%;
+    height: auto;
+    margin: 10px;
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 8px; /* Keep your border radius */
+}
+
+.project {
+    margin-bottom: 2rem;
+}
+
+.project h3 {
+    font-size: 2rem;
+    color: #2f4f4f; /* Dark slate gray */
+    margin-top: 1rem;
+    font-weight: 600;
+}
+
+.project p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-top: 1rem;
+}
+
+.project img {  /* Project-specific image styling */
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.project ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    font-size: 1.1rem;
+}
+
+.project ul li {
+    margin-bottom: 0.8rem;
+}
+
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: #1e3a5f;
+    color: white;
+    font-size: 1rem;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Big Red Button */
+.red-button {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 1.5rem 2rem;
+    background-color: red;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 50%;
+    text-decoration: none;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+
+.red-button:hover {
+    background-color: darkred;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Quiz Box */
+.quiz-box {
+    margin-top: 2rem;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.quiz-box h3 {
+    font-size: 1.8rem;
+    color: #1e3a5f;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.quiz-box label {
+    display: block;
+    margin: 1rem 0 0.5rem;
+}
+
+.quiz-box input {
+    margin-right: 0.5rem;
+}
+
+.quiz-box button {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    background-color: #1e3a5f;
+    color: white;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.quiz-box button:hover {
+    background-color: #ffa07a;
+}
+
+.message {
+    font-size: 1.4rem;
+    color: red;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+#final-message { /* Style for the final score message */
+    margin-top: 20px; /* Add some spacing */
+    font-size: 1.2em; /* Make it a bit larger */
+    font-weight: bold;
+    text-align: center; /* Center the message */
+}
+
+/* Gallery specific styles */
+.gallery-container {
+    display: flex; /* Use flexbox for horizontal arrangement */
+    justify-content: center; /* Center the images horizontally */
+    gap: 20px; /* Consistent spacing between gallery images */
+}
+
+.gallery-container img {
+    max-width: 30%; /* Adjust as needed */
+    height: auto;
+    display: block;
+    border-radius: 8px; /* Consistent border radius */
+}
+
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+    section {
+        margin: 2rem;
+        padding: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    header h1 {
+        font-size: 2.4rem;
+    }
+    section h2 {
+        font-size: 2rem;
+    }
+    nav ul li {
+        margin: 0 8px;
+    }
+    .quiz-box {
+        max-width: 100%;
+        padding: 1.5rem;
+    }
+    .red-button {
+        padding: 1rem 1.5rem;
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header {
+        padding: 1.5rem;
+    }
+    header h1 {
+        font-size: 2rem;
+    }
+    section {
+        margin: 1rem;
+        padding: 1rem;
+    }
+    .quiz-box {
+        padding: 1rem;
+    }
+    .red-button {
+        bottom: 1rem;
+        padding: 0.8rem 1.2rem;
+        font-size: 1rem;
+    }
+}

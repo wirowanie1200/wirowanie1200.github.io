@@ -14,6 +14,7 @@ header {
     color: white;
     padding: 2rem;
     text-align: center;
+    position: relative; /* For absolute positioning of buttons */
 }
 
 header h1 {
@@ -64,13 +65,13 @@ section h2 {
 }
 
 /* Image Styling */
-section img {  /* Images within sections */
+section img {
     max-width: 30%;
     height: auto;
     margin: 10px;
     display: inline-block;
     vertical-align: middle;
-    border-radius: 8px; /* Keep your border radius */
+    border-radius: 8px;
 }
 
 .project {
@@ -90,7 +91,7 @@ section img {  /* Images within sections */
     margin-top: 1rem;
 }
 
-.project img {  /* Project-specific image styling */
+.project img {
     max-width: 100%;
     height: auto;
     border-radius: 8px;
@@ -120,28 +121,60 @@ footer p {
     margin: 0;
 }
 
-/* Big Red Button */
+/* Big Red Buttons - Top Right */
 .red-button {
-    position: fixed;
-    bottom: 2rem;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 1.5rem 2rem;
-    background-color: red;
-    color: white;
-    font-size: 1.5rem;
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    padding: 1rem 1.5rem;
+    font-size: 1.2rem;
     font-weight: bold;
     text-align: center;
-    border-radius: 50%;
+    border-radius: 5px;
     text-decoration: none;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     transition: 0.3s;
+    margin-left: 10px; /* Add some space between buttons */
 }
 
 .red-button:hover {
-    background-color: darkred;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
+
+
+/* Style specifically for the additional buttons */
+#push-button {
+    background-color: red;
+    color: white;
+}
+#push-button:hover {
+    background-color: darkred;
+}
+
+#reni-button {
+    background-color: green;
+    color: white;
+}
+#reni-button:hover {
+    background-color: #1e7e34;
+}
+
+#jesus-button {
+    background-color: blue;
+    color: white;
+}
+#jesus-button:hover {
+    background-color: #0056b3;
+}
+
+#rura-button {
+    background-color: yellow;
+    color: black;
+}
+#rura-button:hover {
+    background-color: #e0a800;
+}
+
 
 /* Quiz Box */
 .quiz-box {
@@ -195,27 +228,96 @@ footer p {
     margin-top: 1rem;
 }
 
-#final-message { /* Style for the final score message */
-    margin-top: 20px; /* Add some spacing */
-    font-size: 1.2em; /* Make it a bit larger */
+#final-message {
+    margin-top: 20px;
+    font-size: 1.2em;
     font-weight: bold;
-    text-align: center; /* Center the message */
+    text-align: center;
 }
 
 /* Gallery specific styles */
 .gallery-container {
-    display: flex; /* Use flexbox for horizontal arrangement */
-    justify-content: center; /* Center the images horizontally */
-    gap: 20px; /* Consistent spacing between gallery images */
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 }
 
 .gallery-container img {
-    max-width: 30%; /* Adjust as needed */
+    max-width: 30%;
     height: auto;
     display: block;
-    border-radius: 8px; /* Consistent border radius */
+    border-radius: 8px;
 }
 
+/* Image Styling within Sections (Important!) */
+section img {
+    max-width: 30%; /* Adjust as needed */
+    height: auto;
+    margin: 10px; /* Consistent spacing */
+    display: inline-block; /* Key for side-by-side */
+    vertical-align: middle; /* Align images vertically */
+    border-radius: 8px;
+}
+
+
+/* Quiz Box */
+.quiz-box {
+    margin-top: 2rem;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.quiz-box h3 {
+    font-size: 1.8rem;
+    color: #1e3a5f;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.quiz-box label {
+    display: block;
+    margin: 1rem 0 0.5rem;
+}
+
+.quiz-box input {
+    margin-right: 0.5rem;
+}
+
+.quiz-box button {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    background-color: #1e3a5f;
+    color: white;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.quiz-box button:hover {
+    background-color: #ffa07a;
+}
+
+.message {
+    font-size: 1.4rem;
+    color: red;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+#final-message {
+    margin-top: 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+}
 
 /* Responsive Design */
 @media screen and (max-width: 1024px) {
@@ -241,7 +343,9 @@ footer p {
     }
     .red-button {
         padding: 1rem 1.5rem;
-        font-size: 1.2rem;
+        font-size: 1rem;
+        top: 1rem;
+        right: 1rem;
     }
 }
 

@@ -121,14 +121,15 @@ footer p {
     margin: 0;
 }
 
-/* Big Red Buttons - Top Right - Two Columns, Two Rows */
+/* Big Red Buttons - Top Right - Two Columns, Two Rows - FIXED */
 .button-container {
-    position: absolute;
+    position: fixed; /* Fixed to the viewport */
     top: 2rem;
     right: 2rem;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
+    z-index: 10; /* Ensure it's above other elements */
 }
 
 .red-button {

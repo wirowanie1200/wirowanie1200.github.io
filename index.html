@@ -7,7 +7,24 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/x-icon" href="logo2.jpg">
     <style>
-        /* ... (All your CSS styles - copy and paste the entire CSS from the previous response) ... */
+        /* ... (Your CSS styles - copy and paste the entire CSS here) ... */
+        .image-with-description { /* Style for images with descriptions */
+            display: flex;
+            flex-direction: column; /* Stack image and description */
+            align-items: center; /* Center horizontally */
+            margin: 10px; /* Add some margin */
+        }
+        .image-with-description img {
+            max-width: 30%; /* Adjust as needed */
+            height: auto;
+            border-radius: 8px;
+        }
+        .image-with-description span { /* Style for the description */
+            font-size: smaller;
+            margin-top: 5px;
+            text-align: center; /* Center the text */
+        }
+
     </style>
 </head>
 <body>
@@ -36,17 +53,30 @@
         <h2>About Me</h2>
         <p>My name is <strong>Adam</strong>, and I’m a <strong>24-year-old Master's student in English Philology</strong>, specializing in <strong>Natural Language Processing (NLP)</strong>. 
            I’m passionate about <strong>language and technology</strong>, constantly exploring how computational methods can <strong>enhance linguistic understanding</strong>.</p>
-        
+        <div class="image-with-description">
+            <img src="me2.jpg" alt="Me">
+            <span>On the overpass in the middle of the night</span>
+        </div>
+
         <h2>Hobbies & Interests</h2>
         <ul>
             <li><strong>🧁 Baking</strong> – I love experimenting with new recipes and flavors.</li>
             <li><strong>🧬 Genealogy</strong> – Tracing my family history gives me a strong sense of <strong>connection to the past</strong>.</li>
             <li><strong>🏃‍♂️ Speed Walking</strong> – A personal challenge that helps me <strong>clear my mind</strong> and stay active.</li>
         </ul>
-        
-        <img src="bake1.jpg" alt="Baking" />
-        <img src="family1.jpg" alt="Family tree representation" />
-        <img src="run1.jpg" alt="Speed walking outdoors" />
+        <div class="image-with-description">
+            <img src="bake3.jpg" alt="Baking">
+            <span>Plume cake</span>
+        </div>
+        <div class="image-with-description">
+            <img src="family2.jpg" alt="Family">
+            <span>In search of great-grandfather</span>
+        </div>
+        <div class="image-with-description">
+            <img src="run1.jpg" alt="Running">
+            <span>Escape from memories</span>
+        </div>
+
     </section>
 
     <section id="work">
@@ -60,8 +90,14 @@
             <li>Handling <strong>responsibilities</strong> in a fast-paced environment.</li>
             <li>Improving <strong>customer service & teamwork</strong>.</li>
         </ul>
-        
-        <img src="work.jpg" alt="Workplace setup" />
+        <div class="image-with-description">
+            <img src="work.jpg" alt="Work">
+            <span>Me at work</span>
+        </div>
+        <div class="image-with-description">
+            <img src="me5.jpg" alt="Coffee Break">
+            <span>Coffee break</span>
+        </div>
     </section>
     
     <section id="projects">
@@ -78,7 +114,7 @@
                 <li><strong>Evaluation & Results:</strong> The model was tested for accuracy, precision, and recall, showing promising results in identifying early warning signs of mental distress in user-generated content.</li>
             </ul>
             <p>This project deepened my understanding of applied NLP in the healthcare domain and fueled my interest in technology's potential to improve mental health care.</p>
-        </div>
+            <img src="project.jpg" alt="Project Image"> </div>
     </section>
 
 <section id="health">
@@ -94,8 +130,14 @@
         
         <p>This journey has been both <strong>eye-opening and challenging</strong>, but I remain <strong>resilient and proactive</strong> in understanding myself better. 
            Through therapy, self-reflection, and professional guidance, I strive to <strong>grow and adapt</strong>, even when life presents difficulties.</p>
-        
-        <img src="self-care.jpg" alt="Self-care and reflection" />
+        <div class="image-with-description">
+            <img src="run4.jpg" alt="Hospital Discharge">
+            <span>The day of discharge from hospital</span>
+        </div>
+        <div class="image-with-description">
+            <img src="me1.jpg" alt="Mountain Hike">
+            <span>Life is like a mountain hike</span>
+        </div>
     </section>
 
 <section id="contact">
@@ -108,7 +150,7 @@
         <li>📧 Email: <a href="mailto:your.email@example.com">your.email@example.com</a></li>
         <li>💼 LinkedIn: <a href="https://www.linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a></li>
         <li>🐙 GitHub: <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></li>
-        <li>📍 Location: [Your City, Country]</li>
+        <li>📍 Location: [Your City, Country]</li> 
     </ul>
 
     <h2>📩 Send Me a Message</h2>
@@ -143,9 +185,18 @@
     <section id="gallery">
         <h2>Gallery</h2>
         <div class="gallery-container">
-            <img src="1.jpg" alt="Gallery Image 1">
-            <img src="2.jpg" alt="Gallery Image 2">
-            <img src="3.jpg" alt="Gallery Image 3">
+            <img src="bake1.jpg" alt="Baking 1">
+            <img src="bake2.jpg" alt="Baking 2">
+            <img src="bake4.jpg" alt="Baking 4">
+            <img src="bake5.jpg" alt="Baking 5">
+            <img src="bake6.jpg" alt="Baking 6">
+            <img src="bake7.jpg" alt="Baking 7">
+            <img src="family1.jpg" alt="Family 1">
+            <img src="me3.jpg" alt="Me 3">
+            <img src="me4.jpg" alt="Me 4">
+            <img src="run2.jpg" alt="Running 2">
+            <img src="run3.jpg" alt="Running 3">
+
         </div>
     </section>
 

@@ -6,26 +6,6 @@
     <title>Adam Wiśniewski</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/x-icon" href="logo2.jpg">
-    <style>
-        /* ... (Your CSS styles - copy and paste the entire CSS here) ... */
-        .image-with-description { /* Style for images with descriptions */
-            display: flex;
-            flex-direction: column; /* Stack image and description */
-            align-items: center; /* Center horizontally */
-            margin: 10px; /* Add some margin */
-        }
-        .image-with-description img {
-            max-width: 30%; /* Adjust as needed */
-            height: auto;
-            border-radius: 8px;
-        }
-        .image-with-description span { /* Style for the description */
-            font-size: smaller;
-            margin-top: 5px;
-            text-align: center; /* Center the text */
-        }
-
-    </style>
 </head>
 <body>
     <header>
@@ -64,19 +44,20 @@
             <li><strong>🧬 Genealogy</strong> – Tracing my family history gives me a strong sense of <strong>connection to the past</strong>.</li>
             <li><strong>🏃‍♂️ Speed Walking</strong> – A personal challenge that helps me <strong>clear my mind</strong> and stay active.</li>
         </ul>
-        <div class="image-with-description">
-            <img src="bake3.jpg" alt="Baking">
-            <span>Plume cake</span>
+        <div class="hobbies-container">
+            <div class="image-with-description">
+                <img src="bake3.jpg" alt="Baking">
+                <span>Plume cake</span>
+            </div>
+            <div class="image-with-description">
+                <img src="family2.jpg" alt="Family">
+                <span>In search of great-grandfather</span>
+            </div>
+            <div class="image-with-description">
+                <img src="run1.jpg" alt="Running">
+                <span>Escape from memories</span>
+            </div>
         </div>
-        <div class="image-with-description">
-            <img src="family2.jpg" alt="Family">
-            <span>In search of great-grandfather</span>
-        </div>
-        <div class="image-with-description">
-            <img src="run1.jpg" alt="Running">
-            <span>Escape from memories</span>
-        </div>
-
     </section>
 
     <section id="work">
@@ -114,7 +95,11 @@
                 <li><strong>Evaluation & Results:</strong> The model was tested for accuracy, precision, and recall, showing promising results in identifying early warning signs of mental distress in user-generated content.</li>
             </ul>
             <p>This project deepened my understanding of applied NLP in the healthcare domain and fueled my interest in technology's potential to improve mental health care.</p>
-            <img src="project.jpg" alt="Project Image"> </div>
+            <div class="image-with-description">
+                <img src="project.jpg" alt="Project Image">
+                <span>Bachelor's degree graduate</span>
+            </div>
+        </div>
     </section>
 
 <section id="health">
@@ -131,79 +116,98 @@
         <p>This journey has been both <strong>eye-opening and challenging</strong>, but I remain <strong>resilient and proactive</strong> in understanding myself better. 
            Through therapy, self-reflection, and professional guidance, I strive to <strong>grow and adapt</strong>, even when life presents difficulties.</p>
         <div class="image-with-description">
-            <img src="run4.jpg" alt="Hospital Discharge">
-            <span>The day of discharge from hospital</span>
+            <img src="run4.jpg" alt="Mountain Hike">
+            <span>Life is like a mountain hike</span>
         </div>
         <div class="image-with-description">
-            <img src="me1.jpg" alt="Mountain Hike">
-            <span>Life is like a mountain hike</span>
+            <img src="me1.jpg" alt="Hospital Discharge">
+            <span>The day of discharge from hospital</span>
         </div>
     </section>
 
 <section id="contact">
-        <h2>Contact</h2>
-<div class="section">
-    <h1>📬 Contact Me</h1>
-    <p>Feel free to reach out! Whether it’s about <strong>collaborations, NLP discussions, or just to say hi</strong>, I’d love to connect.</p>
-    
-    <ul>
-        <li>📧 Email: <a href="mailto:your.email@example.com">your.email@example.com</a></li>
-        <li>💼 LinkedIn: <a href="https://www.linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a></li>
-        <li>🐙 GitHub: <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></li>
-        <li>📍 Location: [Your City, Country]</li> 
-    </ul>
+    <h2>Contact</h2>
+    <div class="section">
+        <h1>📬 Contact Me</h1>
+        <p>Feel free to reach out! Whether it’s about <strong>collaborations, NLP discussions, or just to say hi</strong>, I’d love to connect.</p>
 
-    <h2>📩 Send Me a Message</h2>
-    <form action="mailto:your.email@example.com" method="post" enctype="text/plain">
-        <label for="name">Name:</label><br>
-        <input type="text" id="name" name="name" required><br><br>
+        <ul>
+            <li>📧 Email: <a href="mailto:a.wisniewski.685@studms.ug.edu.pl">your.email@example.com</a></li>
+            <li>🐙 GitHub: <a href="https://github.com/wirowanie1200" target="_blank">github.com/wirowanie1200</a></li>
+            <li>📍 Location: [Gdansk, Poland]</li>
+        </ul>
 
-        <label for="email">Email:</label><br>
-        <input type="email" id="email" name="email" required><br><br>
+        <h2>📩 Send Me a Message</h2>
+        <form action="mailto:a.wisniewski.685@studms.ug.edu.pl" method="post" enctype="text/plain">
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" required><br><br>
 
-        <label for="message">Message:</label><br>
-        <textarea id="message" name="message" rows="4" required></textarea><br><br>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
 
-        <button type="submit">Send Message</button>
-    </form>
-</div>
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" rows="4" required></textarea><br><br>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
 </section>
-    
-    <section id="quiz">
-        <div class="quiz-box" id="quiz-box">
-            <h3>How well do you know Adam?</h3>
-            <form id="quiz-form">
-                <p id="question-text"></p>
-                <div id="options-container"></div> <br><br>
-                <button type="submit">Submit Answer</button>
-            </form>
-            <p id="message" class="message"></p>
-            <div id="final-message" style="display:none;"></div>
-        </div>
-    </section>
 
-    <section id="gallery">
-        <h2>Gallery</h2>
-        <div class="gallery-container">
+<section id="quiz">
+    <div class="quiz-box" id="quiz-box">
+        <h3>How well do you know Adam?</h3>
+        <form id="quiz-form">
+            <p id="question-text"></p>
+            <div id="options-container"></div> <br><br>
+            <button type="submit">Submit Answer</button>
+        </form>
+        <p id="message" class="message"></p>
+        <div id="final-message" style="display:none;"></div>
+    </div>
+</section>
+
+<section id="gallery">
+    <h2>Gallery</h2>
+    <div class="gallery-container">
+        <div class="image-with-description">
             <img src="bake1.jpg" alt="Baking 1">
-            <img src="bake2.jpg" alt="Baking 2">
-            <img src="bake4.jpg" alt="Baking 4">
-            <img src="bake5.jpg" alt="Baking 5">
-            <img src="bake6.jpg" alt="Baking 6">
-            <img src="bake7.jpg" alt="Baking 7">
-            <img src="family1.jpg" alt="Family 1">
-            <img src="me3.jpg" alt="Me 3">
-            <img src="me4.jpg" alt="Me 4">
-            <img src="run2.jpg" alt="Running 2">
-            <img src="run3.jpg" alt="Running 3">
-
         </div>
-    </section>
+        <div class="image-with-description">
+            <img src="bake2.jpg" alt="Baking 2">
+        </div>
+        <div class="image-with-description">
+            <img src="bake4.jpg" alt="Baking 4">
+        </div>
+        <div class="image-with-description">
+            <img src="bake5.jpg" alt="Baking 5">
+        </div>
+        <div class="image-with-description">
+            <img src="bake6.jpg" alt="Baking 6">
+        </div>
+        <div class="image-with-description">
+            <img src="bake7.jpg" alt="Baking 7">
+        </div>
+        <div class="image-with-description">
+            <img src="family1.jpg" alt="Family 1">
+        </div>
+        <div class="image-with-description">
+            <img src="me3.jpg" alt="Me 3">
+        </div>
+        <div class="image-with-description">
+            <img src="me4.jpg" alt="Me 4">
+        </div>
+        <div class="image-with-description">
+            <img src="run2.jpg" alt="Running 2">
+        </div>
+        <div class="image-with-description">
+            <img src="run3.jpg" alt="Running 3">
+        </div>
+    </div>
+</section>
 
-    <footer>
-        <p>© 2025 Adam's Portfolio. All rights reserved.</p>
-    </footer>
+<footer>
+    <p>© 2025 Adam's Portfolio. All rights reserved.</p>
+</footer>
 
-    <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
-</html>

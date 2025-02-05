@@ -11,14 +11,14 @@
         .quiz-box {
             border: 1px solid #ccc;
             padding: 20px;
-            margin-bottom: 20px; /* Add some spacing below the quiz */
+            margin-bottom: 20px;
         }
         .quiz-box h3 {
-          text-align: center; /* Center the quiz title */
+            text-align: center;
         }
         .quiz-box label {
-            display: block; /* Makes each answer option appear on a new line */
-            margin-bottom: 10px; /* Adds some space between options */
+            display: block;
+            margin-bottom: 10px;
         }
         .message {
             margin-top: 10px;
@@ -29,6 +29,32 @@
         }
         .incorrect {
             color: red;
+        }
+        #final-message {
+            margin-top: 20px;
+            font-size: 1.2em;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        section img {
+            max-width: 30%;
+            height: auto;
+            margin: 10px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .gallery-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .gallery-container img {
+            max-width: 30%;
+            height: auto;
+            display: block;
         }
 
     </style>
@@ -48,7 +74,7 @@
             </ul>
         </nav>
     </header>
-    
+
     <section id="about">
         <h2>About Me</h2>
         <p>My name is <strong>Adam</strong>, and I’m a <strong>24-year-old Master's student in English Philology</strong>, specializing in <strong>Natural Language Processing (NLP)</strong>. 
@@ -153,16 +179,17 @@
                 <button type="submit">Submit Answer</button>
             </form>
             <p id="message" class="message"></p>
-            <button id="next-question" style="display:none;">Next Question</button>
+            <div id="final-message" style="display:none;"></div>
         </div>
     </section>
-    
+
     <section id="gallery">
         <h2>Gallery</h2>
-        <p>My name is Adam, and I’m a 24-year-old student pursuing a Master’s degree in English Philology with a specialization in Natural Language Processing (NLP). I’m passionate about language and technology, and I love exploring how computational methods can enhance linguistic understanding. Alongside my studies, I work at TJX, balancing my academic and professional responsibilities with dedication.</p>
-        <p>Beyond my studies and work, I have a variety of hobbies that keep me engaged and motivated. I enjoy baking, genealogy, and speed walking. Tracing family history gives me a sense of connection to the past, while baking allows me to experiment and create something delicious. Speed walking is my way of challenging myself physically and clearing my mind. These interests reflect my analytical mindset, appreciation for tradition, and drive for self-improvement.</p>
-        <p>Health and well-being play a big role in my life. I manage hypothyroidism and juvenile idiopathic arthritis (currently in remission), along with mental health challenges like Generalized Anxiety Disorder (GAD) and depression. Recently, I’ve started the diagnostic process for Borderline Personality Disorder (BPD), which has been both eye-opening and difficult. Despite the struggles, I keep pushing forward, working with professionals to better understand myself and find ways to grow.</p>
-        <p>Life isn’t always easy, but I remain introspective, curious, and resilient. Whether it’s through my academic ambitions, personal exploration, or creative interests, I’m always striving for self-improvement and deeper understanding.</p>
+        <div class="gallery-container">
+            <img src="1.jpg" alt="Gallery Image 1">
+            <img src="2.jpg" alt="Gallery Image 2">
+            <img src="3.jpg" alt="Gallery Image 3">
+        </div>
     </section>
 
     <a href="https://www.youtube.com/watch?v=oJDGcxAf9D8" class="red-button">Push the Button</a>
@@ -226,12 +253,12 @@
         ];
 
         let currentQuestionIndex = 0;
-        let score = 0; 
+        let score = 0;
 
         const questionText = document.getElementById("question-text");
         const optionsContainer = document.getElementById("options-container");
         const message = document.getElementById("message");
-        const nextButton = document.getElementById("next-question");
+        const finalMessage = document.getElementById("final-message"); // Get the final message element
         const quizForm = document.getElementById("quiz-form");
 
 
@@ -256,8 +283,8 @@
                 optionsContainer.appendChild(document.createElement("br"));
             });
 
-            nextButton.style.display = "none"; // Hide the next button initially
-            quizForm.style.display = "block"; // Show quiz form
+            quizForm.reset(); // Clear radio button selection
+
         }
 
         function handleQuizAnswer(event) {
@@ -266,7 +293,7 @@
 
             if (!selectedAnswer) {
                 message.textContent = "Please select an answer.";
-                message.className = "incorrect"; // Set class for styling
+                message.className = "incorrect";
                 return;
             }
 
@@ -275,37 +302,38 @@
 
             if (answerIndex === correctAnswer) {
                 message.textContent = "Correct!";
-                message.className = "correct"; // Set class for styling
+                message.className = "correct";
                 score++;
             } else {
                 message.textContent = "Incorrect. The correct answer was " + questions[currentQuestionIndex].options[correctAnswer] + ".";
-                message.className = "incorrect"; // Set class for styling
+                message.className = "incorrect";
             }
 
-            quizForm.style.display = "none"; // Hide quiz form
-            nextButton.style.display = "block"; // Show next question button
-
-        }
-
-        function nextQuestion() {
             currentQuestionIndex++;
-            message.textContent = ""; // Clear the message
-            showQuestion(currentQuestionIndex);
+
+            if (currentQuestionIndex < questions.length) {
+                setTimeout(() => {
+                    showQuestion(currentQuestionIndex);
+                    message.textContent = "";
+                }, 1500); // Delay for feedback display
+            } else {
+                endQuiz();
+            }
         }
 
         function endQuiz() {
-            questionText.textContent = "Quiz Finished!";
-            optionsContainer.innerHTML = "";
-            message.textContent = `Your final score is ${score} out of ${questions.length}.`;
-            message.className = "correct"; // Or a specific "end-message" class
-            nextButton.style.display = "none";
             quizForm.style.display = "none";
+            questionText.style.display = "none";
+            optionsContainer.style.display = "none";
+            message.style.display = "none"; // Hide per-question messages
+
+            finalMessage.textContent = `Your final score is ${score} out of ${questions.length}.`;
+            finalMessage.style.display = "block";
+            finalMessage.className = "correct";
         }
 
         quizForm.addEventListener("submit", handleQuizAnswer);
-        nextButton.addEventListener("click", nextQuestion);
-
-        showQuestion(currentQuestionIndex); // Initialize the quiz
+        showQuestion(currentQuestionIndex);
     </script>
 
 </body>

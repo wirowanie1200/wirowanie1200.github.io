@@ -6,7 +6,33 @@
     <title>Adam Wiśniewski</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/x-icon" href="logo2.jpg">
-    </head>
+    <style>
+        /* Basic styling for the quiz */
+        .quiz-box {
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin-bottom: 20px; /* Add some spacing below the quiz */
+        }
+        .quiz-box h3 {
+          text-align: center; /* Center the quiz title */
+        }
+        .quiz-box label {
+            display: block; /* Makes each answer option appear on a new line */
+            margin-bottom: 10px; /* Adds some space between options */
+        }
+        .message {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        .correct {
+            color: green;
+        }
+        .incorrect {
+            color: red;
+        }
+
+    </style>
+</head>
 <body>
     <header>
         <h1>Adam Wiśniewski</h1>
@@ -53,7 +79,6 @@
         </ul>
         
         <img src="work.jpg" alt="Workplace setup" />
-    </div>
     </section>
     
     <section id="projects">
@@ -88,16 +113,7 @@
            Through therapy, self-reflection, and professional guidance, I strive to <strong>grow and adapt</strong>, even when life presents difficulties.</p>
         
         <img src="self-care.jpg" alt="Self-care and reflection" />
-    </div>
-
-    <div class="section">
-        <h1>More About Me</h1>
-        <ul>
-            <li><strong>📚 Favorite Books & Movies:</strong> (Add your favorite ones here!)</li>
-            <li><strong>🎯 Personal Goals:</strong> (What do you aspire to achieve in NLP, work, or personal life?)</li>
-            <li><strong>🤩 Fun Fact:</strong> (Something unique about you!)</li>
-        </ul>
-    </div></section>
+    </section>
 
 <section id="contact">
         <h2>Contact</h2>
@@ -126,45 +142,29 @@
         <button type="submit">Send Message</button>
     </form>
 </div>
-
+</section>
+    
+    <section id="quiz">
+        <div class="quiz-box" id="quiz-box">
+            <h3>How well do you know Adam?</h3>
+            <form id="quiz-form">
+                <p id="question-text"></p>
+                <div id="options-container"></div> <br><br>
+                <button type="submit">Submit Answer</button>
+            </form>
+            <p id="message" class="message"></p>
+            <button id="next-question" style="display:none;">Next Question</button>
+        </div>
     </section>
     
-    <!-- Quiz Box -->        
-<section id="quiz">
-    <div class="quiz-box" id="quiz-box">
-        <h3>How well do you know Adam?</h3>
-        <form id="quiz-form">
-            <p id="question-text"></p>
-            <label>
-                <input type="radio" name="question" value="a"> a) Option A
-            </label><br>
-            <label>
-                <input type="radio" name="question" value="b"> b) Option B
-            </label><br>
-            <label>
-                <input type="radio" name="question" value="c"> c) Option C
-            </label><br>
-            <label>
-                <input type="radio" name="question" value="d"> c) Option D
-            </label><br>
-            <label>
-                <input type="radio" name="question" value="e"> c) Option E
-            </label><br><br>
-            <button type="submit">Submit Answer</button>
-        </form>
-        <p id="message" class="message"></p>
-    </div>
-    </section>
-
     <section id="gallery">
-        <h2>About Me</h2>
+        <h2>Gallery</h2>
         <p>My name is Adam, and I’m a 24-year-old student pursuing a Master’s degree in English Philology with a specialization in Natural Language Processing (NLP). I’m passionate about language and technology, and I love exploring how computational methods can enhance linguistic understanding. Alongside my studies, I work at TJX, balancing my academic and professional responsibilities with dedication.</p>
         <p>Beyond my studies and work, I have a variety of hobbies that keep me engaged and motivated. I enjoy baking, genealogy, and speed walking. Tracing family history gives me a sense of connection to the past, while baking allows me to experiment and create something delicious. Speed walking is my way of challenging myself physically and clearing my mind. These interests reflect my analytical mindset, appreciation for tradition, and drive for self-improvement.</p>
         <p>Health and well-being play a big role in my life. I manage hypothyroidism and juvenile idiopathic arthritis (currently in remission), along with mental health challenges like Generalized Anxiety Disorder (GAD) and depression. Recently, I’ve started the diagnostic process for Borderline Personality Disorder (BPD), which has been both eye-opening and difficult. Despite the struggles, I keep pushing forward, working with professionals to better understand myself and find ways to grow.</p>
         <p>Life isn’t always easy, but I remain introspective, curious, and resilient. Whether it’s through my academic ambitions, personal exploration, or creative interests, I’m always striving for self-improvement and deeper understanding.</p>
     </section>
 
-    <!-- Big red button -->
     <a href="https://www.youtube.com/watch?v=oJDGcxAf9D8" class="red-button">Push the Button</a>
 
     <footer>
@@ -226,45 +226,87 @@
         ];
 
         let currentQuestionIndex = 0;
+        let score = 0; 
+
+        const questionText = document.getElementById("question-text");
+        const optionsContainer = document.getElementById("options-container");
+        const message = document.getElementById("message");
+        const nextButton = document.getElementById("next-question");
+        const quizForm = document.getElementById("quiz-form");
+
 
         function showQuestion(index) {
+            if (index >= questions.length) {
+                endQuiz();
+                return;
+            }
             const question = questions[index];
-            document.getElementById("question-text").textContent = question.question;
-            document.querySelectorAll("input[name='question']").forEach((input, i) => {
-                input.nextSibling.textContent = question.options[i];
+            questionText.textContent = question.question;
+            optionsContainer.innerHTML = ""; // Clear previous options
+
+            question.options.forEach((option, i) => {
+                const label = document.createElement("label");
+                const input = document.createElement("input");
+                input.type = "radio";
+                input.name = "question";
+                input.value = String.fromCharCode(97 + i); // a, b, c, etc.
+                label.appendChild(input);
+                label.appendChild(document.createTextNode(" " + option));
+                optionsContainer.appendChild(label);
+                optionsContainer.appendChild(document.createElement("br"));
             });
+
+            nextButton.style.display = "none"; // Hide the next button initially
+            quizForm.style.display = "block"; // Show quiz form
         }
 
         function handleQuizAnswer(event) {
             event.preventDefault();
             const selectedAnswer = document.querySelector("input[name='question']:checked");
-            const messageElement = document.getElementById("message");
 
-            if (selectedAnswer) {
-                const answerIndex = ["a", "b", "c", "d", "e"].indexOf(selectedAnswer.value);
-                if (answerIndex === questions[currentQuestionIndex].correctAnswer) {
-                    currentQuestionIndex++;
-                    messageElement.textContent = "Correct! Moving to next question...";
-                    if (currentQuestionIndex < questions.length) {
-                        setTimeout(() => {
-                            messageElement.textContent = '';
-                            showQuestion(currentQuestionIndex);
-                        }, 1000);
-                    } else {
-                        messageElement.textContent = 'Congratulations, you know Adam well!';
-                    }
-                } else {
-                    messageElement.textContent = "You don't know Adam well enough! Try again!";
-                }
-            } else {
-                messageElement.textContent = "Please select an answer.";
+            if (!selectedAnswer) {
+                message.textContent = "Please select an answer.";
+                message.className = "incorrect"; // Set class for styling
+                return;
             }
+
+            const answerIndex = selectedAnswer.value.charCodeAt(0) - 97; // Convert a, b, c to 0, 1, 2
+            const correctAnswer = questions[currentQuestionIndex].correctAnswer;
+
+            if (answerIndex === correctAnswer) {
+                message.textContent = "Correct!";
+                message.className = "correct"; // Set class for styling
+                score++;
+            } else {
+                message.textContent = "Incorrect. The correct answer was " + questions[currentQuestionIndex].options[correctAnswer] + ".";
+                message.className = "incorrect"; // Set class for styling
+            }
+
+            quizForm.style.display = "none"; // Hide quiz form
+            nextButton.style.display = "block"; // Show next question button
+
         }
 
-        document.getElementById("quiz-form").addEventListener("submit", handleQuizAnswer);
+        function nextQuestion() {
+            currentQuestionIndex++;
+            message.textContent = ""; // Clear the message
+            showQuestion(currentQuestionIndex);
+        }
 
-        // Initialize quiz
-        showQuestion(currentQuestionIndex);
+        function endQuiz() {
+            questionText.textContent = "Quiz Finished!";
+            optionsContainer.innerHTML = "";
+            message.textContent = `Your final score is ${score} out of ${questions.length}.`;
+            message.className = "correct"; // Or a specific "end-message" class
+            nextButton.style.display = "none";
+            quizForm.style.display = "none";
+        }
+
+        quizForm.addEventListener("submit", handleQuizAnswer);
+        nextButton.addEventListener("click", nextQuestion);
+
+        showQuestion(currentQuestionIndex); // Initialize the quiz
     </script>
+
 </body>
 </html>

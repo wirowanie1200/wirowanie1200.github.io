@@ -46,7 +46,7 @@ const questions = [
     },
     {
         question: "How does Adam prefer to cope with stress?",
-        options: ["Exercising or being active", "Talking to friends or family", "Spending time alone to reflect", "Praying", "taking psychedelics"],
+        options: ["Exercising or being active", "Talking to friends or family", "Spending time alone to reflect", "Praying", "Taking psychedelics"],
         correctAnswer: 2
     }
 ];
